@@ -12,11 +12,11 @@ Start lokaal development:
 -------------------------
 
 Open folder in command line en typ `npm install`
-Dit installeert alle plugins in package.json onder devDependencies.
+Dit installeerd alle plugins in package.json onder devDependencies.
 
 Gulp starten:
 -------------
-Open folder in command line en typ `gulp` - server start op localhost:8080 met browsersync
+Open folder in command line en typ `gulp` - server start op localhost:3000 met browsersync
 
 Notes
 ----- 

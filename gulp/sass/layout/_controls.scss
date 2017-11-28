@@ -1,42 +1,53 @@
 .controls {
   background-color: $purple;
-  width:400px;
-  height:100vh;
-  text-align: center;
+  width:            400px;
+  height:           100vh;
+  text-align:       center;
 
   .snowflakeWrap {
-    width:300px;
-    height:300px;
-    background-color: rgba(255, 255, 255, 0.2);
+    width:   300px;
+    height:  300px;
+    //background-color: rgba(255, 255, 255, 0.2);
     display: inline-block;
-    margin: 20px 0;
+    margin:  20px 0;
+    svg {
+      width:  100%;
+      height: 100%;
+    }
   }
   .textWrap {
-    padding:30px;
-    width:100%;
+    padding:    30px;
+    width:      100%;
     text-align: left;
   }
   input {
     padding: 10px;
-    margin: 5px 0;
+    margin:  5px 0;
     display: inline-block;
 
-    &[type=text]{
+    &[type=text] {
       background-color: $lightpurple;
-      width:80%;
-      cursor: text;
+      width:            80%;
+      cursor:           text;
     }
-    &[type=button]{
+    &[type=button] {
       background-color: $warmpurple;
-      cursor: pointer;
+      cursor:           pointer;
+      border-bottom:    solid 3px darken($warmpurple, 10%);
+      &:hover {
+        border-bottom: solid 3px lighten($warmpurple, 10%);
+      }
     }
   }
   button {
     background-color: #3D032D;
-    color: white;
-    width:100%;
-    padding:10px;
-    cursor: pointer;
-
+    color:            white;
+    width:            100%;
+    padding:          10px;
+    cursor:           pointer;
+    border-bottom:    solid 3px darken($warmpurple, 10%);
+    &:hover {
+      border-bottom: solid 3px lighten($warmpurple, 10%);
+    }
   }
 }

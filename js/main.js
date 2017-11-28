@@ -3783,7 +3783,22 @@ this._uncache(!1)),this._pauseTime=a?b:null,this._paused=a,this._active=this.isA
 
 }));
 $(document).ready(function () {
-   // alert('jQuery werkt');
-});
+    // alert('jQuery werkt');
 
+    var text;
+
+    $('.test').on("click", function () {
+        console.log('klik');
+        text = $(".text").val();
+        console.log(text);
+        $('.textFill').html(text);
+    })
+
+
+
+    //snow animation
+
+
+
+});
 //# sourceMappingURL=maps/main.js.map

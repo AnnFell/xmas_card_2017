@@ -1,5 +1,5 @@
-$darkpurple: #04030A;
 $purple: #08031E;
+$darkpurple: darken($purple, 5%); //#04030A;
 $warmpurple: #3D032D;
 $lightpurple: #422B66;
 $white: white;
@@ -9,10 +9,11 @@ body, input, button {
   font-family: 'Rubik Mono One', sans-serif;
   line-height: 16px;
 }
+
 a:link {
-  color:$white;
+  color:           $white;
   text-decoration: underline;
   &:hover {
-    color:darken($white, 20%);
+    color: darken($white, 20%);
   }
 }
