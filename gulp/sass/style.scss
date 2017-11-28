@@ -1,7 +1,8 @@
-
+@import "helpers/reset";
 @import "helpers/variables";
 @import "helpers/functions";
 @import "helpers/mixins";
 @import "helpers/snippets";
 
-@import "layout/header";
+@import "layout/controls";
+@import "layout/body"
