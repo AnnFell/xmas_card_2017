@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Rubik+Mono+One");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -45,6 +46,16 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+body, input, button {
+  font-family: 'Rubik Mono One', sans-serif;
+  line-height: 16px; }
+
+a:link {
+  color: white;
+  text-decoration: underline; }
+  a:link:hover {
+    color: #cccccc; }
+
 .clearfix:before, .clearfix:after {
   content: "";
   display: table; }
@@ -52,27 +63,64 @@ table {
 .clearfix:after {
   clear: both; }
 
+input, button {
+  background: none;
+  outline: none;
+  border: none;
+  color: white; }
+
 .controls {
   background-color: #08031E;
   width: 400px;
   height: 100vh;
-  padding: 30px;
-  text-align: left; }
+  text-align: center; }
   .controls .snowflakeWrap {
     width: 300px;
     height: 300px;
     background-color: rgba(255, 255, 255, 0.2);
-    display: inline-block; }
+    display: inline-block;
+    margin: 20px 0; }
+  .controls .textWrap {
+    padding: 30px;
+    width: 100%;
+    text-align: left; }
   .controls input {
+    padding: 10px;
+    margin: 5px 0;
+    display: inline-block; }
+    .controls input[type=text] {
+      background-color: #422B66;
+      width: 80%;
+      cursor: text; }
+    .controls input[type=button] {
+      background-color: #3D032D;
+      cursor: pointer; }
+  .controls button {
+    background-color: #3D032D;
+    color: white;
     width: 100%;
     padding: 10px;
-    margin: 5px 0; }
-  .controls button {
-    background-color: #3D032D; }
+    cursor: pointer; }
 
 body {
+  overflow: hidden;
   box-sizing: border-box;
   background-color: #04030A;
   color: white; }
+
+.credit {
+  color: white;
+  background-color: #3D032D;
+  height: 13px;
+  width: 45px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 12px; }
+  .credit:hover {
+    height: auto;
+    width: 300px; }
 
 /*# sourceMappingURL=maps/style.css.map */

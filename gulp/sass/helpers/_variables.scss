@@ -1,4 +1,18 @@
 $darkpurple: #04030A;
 $purple: #08031E;
 $warmpurple: #3D032D;
+$lightpurple: #422B66;
 $white: white;
+
+@import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One');
+body, input, button {
+  font-family: 'Rubik Mono One', sans-serif;
+  line-height: 16px;
+}
+a:link {
+  color:$white;
+  text-decoration: underline;
+  &:hover {
+    color:darken($white, 20%);
+  }
+}

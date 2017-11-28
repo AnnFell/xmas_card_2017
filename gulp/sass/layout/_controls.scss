@@ -2,22 +2,41 @@
   background-color: $purple;
   width:400px;
   height:100vh;
-  padding: 30px;
-  text-align: left;
+  text-align: center;
 
   .snowflakeWrap {
     width:300px;
     height:300px;
     background-color: rgba(255, 255, 255, 0.2);
     display: inline-block;
+    margin: 20px 0;
+  }
+  .textWrap {
+    padding:30px;
+    width:100%;
+    text-align: left;
   }
   input {
-    width:100%;
     padding: 10px;
     margin: 5px 0;
+    display: inline-block;
+
+    &[type=text]{
+      background-color: $lightpurple;
+      width:80%;
+      cursor: text;
+    }
+    &[type=button]{
+      background-color: $warmpurple;
+      cursor: pointer;
+    }
   }
   button {
     background-color: #3D032D;
+    color: white;
+    width:100%;
+    padding:10px;
+    cursor: pointer;
 
   }
 }

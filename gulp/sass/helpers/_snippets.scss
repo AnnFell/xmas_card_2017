@@ -7,3 +7,10 @@
 
     &:after { clear: both; }
 }
+
+input, button {
+    background: none;
+    outline:none;
+    border:none;
+    color:$white;
+}
