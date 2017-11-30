@@ -1,53 +1,118 @@
-.controls {
-  background-color: $purple;
-  width:            400px;
-  height:           100vh;
-  text-align:       center;
+.factoryWrap {
+  //background-color: rgba(255, 255, 255, 0.3);
+  min-width:  100%;
+  height:     80vh;
+  min-height: 300px;
+  position:   absolute;
+  bottom:     0;
+  left:       auto;
+  right:      auto;
+}
 
-  .snowflakeWrap {
-    width:   300px;
-    height:  300px;
-    //background-color: rgba(255, 255, 255, 0.2);
-    display: inline-block;
-    margin:  20px 0;
-    svg {
+.factory {
+  height:       100%;
+  width:        775px;
+  margin-left:  auto;
+  margin-right: auto;
+
+  position:absolute;
+  left:0;
+  right:0;
+
+  &__dash {
+    width:        773px;
+    height:       100%;
+    margin-left:  auto;
+    margin-right: auto;
+    position:     absolute;
+    bottom:       0;
+    &__overlay {
+      background-image:  url('../img/dash.svg');
+      background-repeat: no-repeat;
+      background-size:   cover;
+      width:             773-60px;
+      height:            435px;
+      margin-left:       auto;
+      margin-right:      auto;
+      @include sort(absolute, 950);
+      top:               300px;
+      min-height:        500px;
+      padding:           200px 30px 0 30px;
+    }
+  }
+
+  &__glass {
+    width:    300px;
+    height:   100%;
+    margin:   0 auto;
+    position: relative;
+    &__back {
+      background-image: url('../img/glass_back.svg');
+      background-size:  100%;
+      width:            100%;
+      height:           100%;
+      @include sort(absolute, 800);
+      opacity:          0.5;
+    }
+    .snowflake {
       width:  100%;
       height: 100%;
+      @include sort(absolute, 850);
+      svg {
+        width:                     80%;
+        margin-left:               10%;
+        margin-right:              10%;
+        position:                  relative;
+        top:                       -30px;
+      }
+    }
+    &__front {
+      background-image: url('../img/glass_front.svg');
+      background-size:  100%;
+      width:            100%;
+      height:           100%;
+      @include sort(absolute, 900);
     }
   }
-  .textWrap {
-    padding:    30px;
-    width:      100%;
-    text-align: left;
-  }
-  input {
-    padding: 10px;
-    margin:  5px 0;
-    display: inline-block;
+}
 
-    &[type=text] {
-      background-color: $lightpurple;
-      width:            80%;
-      cursor:           text;
-    }
-    &[type=button] {
-      background-color: $warmpurple;
-      cursor:           pointer;
-      border-bottom:    solid 3px darken($warmpurple, 10%);
-      &:hover {
-        border-bottom: solid 3px lighten($warmpurple, 10%);
+.controls {
+  .textWrap {
+    width:   60%;
+    display: inline-block;
+    input {
+      padding: 10px;
+      margin:  5px 0;
+      display: inline-block;
+
+      &[type=text] {
+        background-color: $darkbrown;
+        width:            80%;
+        cursor:           text;
+      }
+      &[type=button] {
+        background-color: $red;
+        cursor:           pointer;
+        border-bottom:    solid 3px lighten($brown, 10%);
+        &:hover {
+          border-bottom: solid 3px darken($brown, 10%);
+        }
       }
     }
   }
   button {
-    background-color: #3D032D;
-    color:            white;
-    width:            100%;
-    padding:          10px;
-    cursor:           pointer;
-    border-bottom:    solid 3px darken($warmpurple, 10%);
+    color:               white;
+    width:               40%;
+    height:              200px;
+    padding:             10px;
+    cursor:              pointer;
+    float:               right;
+    background-image:    url('../img/switch_off.png');
+    background-repeat:   no-repeat;
+    background-position: center top;
+    margin-top:          -30px;
     &:hover {
-      border-bottom: solid 3px lighten($warmpurple, 10%);
+      background-image: url('../img/switch_on.png');
     }
   }
 }

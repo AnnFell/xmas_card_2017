@@ -19,3 +19,8 @@
     color: $hover;
   }
 }
+
+@mixin sort( $position, $zindex) {
+  position: $position;
+  z-index: $zindex;
+}
