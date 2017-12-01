@@ -3797,8 +3797,8 @@ $(document).ready(function () {
 
 
     //Snowflake drift
-    var factoryFlake = $('.snowflake svg');
-    TweenMax.to(factoryFlake, 2, {top:'-20px', repeat:-1, ease: Power2.easeOut, yoyo:true});
+    var factoryFlake = $('.snowflake');
+    TweenMax.to(factoryFlake, 2, {top:'-20px', repeat:-1, ease: Power1.easeInOut, yoyo:true});
 
 
 
