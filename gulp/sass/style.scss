@@ -5,9 +5,10 @@
 @import "helpers/snippets";
 @import "helpers/animations";
 
-@import "layout/controls";
+
 @import "layout/body";
-@import "layout/credit";
+@import "layout/controls";
+@import "layout/_factory.scss";
 @import "layout/mediaqueries";
 
 @import "components/snow";

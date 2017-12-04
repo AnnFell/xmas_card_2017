@@ -1,14 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+body, html {
+  height:100%;
+}
 body {
   overflow: hidden;
-  box-sizing: border-box;
+
   position: relative;
   background-color: $grey;
   color: white;
-  background-image: url('../img/happynewyear.svg');
-  background-size: 80%;
-  background-position: center top;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+  //background-image: url('../img/happynewyear.svg');
+  //background-size: 80%;
+  //background-position: center top;
+  //background-repeat: no-repeat;
+  //min-height: 100vh;
 }
 
+#controls {
+  background-color: $blue;
+  width:            300px;
+  height:           100%;
+  float:            left;
+  padding:          30px;
+  .textWrap {
+    display:        table-cell;
+    vertical-align: center;
+  }
+}
+
+#page {
+  width: calc(100% - 300px);
+  height:100%;
+  float:right;
+  //background-color:yellow;
+}
+
+svg {
+  font-size:30px;
+}
 

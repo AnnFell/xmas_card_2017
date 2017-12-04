@@ -79,48 +79,95 @@ input, button {
   100% {
     top: -30px; } }
 
-.factoryWrap {
-  min-width: 100%;
-  height: 80vh;
-  min-height: 300px;
-  position: absolute;
-  bottom: 0;
-  left: auto;
-  right: auto; }
+* {
+  box-sizing: border-box; }
+
+body, html {
+  height: 100%; }
+
+body {
+  overflow: hidden;
+  position: relative;
+  background-color: #D8D8D8;
+  color: white; }
+
+#controls {
+  background-color: #639EA8;
+  width: 300px;
+  height: 100%;
+  float: left;
+  padding: 30px; }
+  #controls .textWrap {
+    display: table-cell;
+    vertical-align: center; }
+
+#page {
+  width: calc(100% - 300px);
+  height: 100%;
+  float: right; }
+
+svg {
+  font-size: 30px; }
+
+input, button {
+  cursor: pointer; }
+
+.controls input {
+  padding: 10px;
+  margin: 5px 0;
+  display: inline-block; }
+  .controls input[type=text] {
+    background-color: #176572;
+    width: 80%;
+    cursor: text; }
+  .controls input[type=button] {
+    background-color: #E0630E;
+    cursor: pointer;
+    border-bottom: solid 3px #84b2ba; }
+    .controls input[type=button]:hover {
+      background-color: #FF4200;
+      border-bottom: solid 3px #4d828b; }
+
+.launch {
+  display: block;
+  background-color: #E0630E;
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+  border: solid 3px #84b2ba;
+  margin-top: 20px; }
+  .launch:hover {
+    background-color: #FF4200;
+    border: solid 3px #4d828b; }
 
 .factory {
+  box-sizing: border-box;
+  width: 550px;
+  margin: 0 auto;
   height: 100%;
-  width: 775px;
-  margin-left: auto;
-  margin-right: auto;
-  position: absolute;
-  left: 0;
-  right: 0; }
+  position: relative;
+  padding-top: 30vh;
+  overflow: hidden; }
   .factory__dash {
-    width: 773px;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    background-color: #639EA8;
+    width: 100%;
     position: absolute;
-    bottom: 0; }
-    .factory__dash__overlay {
-      background-image: url("../img/dash.svg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      width: 713px;
-      height: 435px;
-      margin-left: auto;
-      margin-right: auto;
-      position: absolute;
-      z-index: 950;
-      top: 300px;
-      min-height: 500px;
-      padding: 200px 30px 0 30px; }
+    bottom: 0;
+    height: 150px;
+    z-index: 600; }
+    .factory__dash__top {
+      height: 60px;
+      margin-top: -58px;
+      background-image: url("../img/dash_top.svg");
+      background-size: contain;
+      background-repeat: no-repeat; }
   .factory__glass {
     width: 300px;
     height: 100%;
     margin: 0 auto;
-    position: relative; }
+    position: relative;
+    z-index: 100; }
     .factory__glass__back {
       background-image: url("../img/glass_back.svg");
       background-size: 100%;
@@ -147,81 +194,5 @@ input, button {
       height: 100%;
       position: absolute;
       z-index: 900; }
-
-.controls .textWrap {
-  width: 60%;
-  display: inline-block; }
-  .controls .textWrap input {
-    padding: 10px;
-    margin: 5px 0;
-    display: inline-block; }
-    .controls .textWrap input[type=text] {
-      background-color: #190601;
-      width: 80%;
-      cursor: text; }
-    .controls .textWrap input[type=button] {
-      background-color: #BA0C0C;
-      cursor: pointer;
-      border-bottom: solid 3px #82320e; }
-      .controls .textWrap input[type=button]:hover {
-        border-bottom: solid 3px #260e04; }
-
-.controls button {
-  color: white;
-  width: 40%;
-  height: 200px;
-  padding: 10px;
-  cursor: pointer;
-  float: right;
-  background-image: url("../img/switch_off.png");
-  background-repeat: no-repeat;
-  background-position: center top;
-  margin-top: -30px; }
-  .controls button:hover {
-    background-image: url("../img/switch_on.png"); }
-
-body {
-  overflow: hidden;
-  box-sizing: border-box;
-  position: relative;
-  background-color: #D8D8D8;
-  color: white;
-  background-image: url("../img/happynewyear.svg");
-  background-size: 80%;
-  background-position: center top;
-  background-repeat: no-repeat;
-  min-height: 100vh; }
-
-@media screen and (max-width: 800px) {
-  body {
-    background-color: slategrey; }
-  .factory {
-    height: 100%;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    position: absolute;
-    left: 0;
-    right: 0; }
-    .factory__dash {
-      width: 100%; }
-      .factory__dash__overlay {
-        width: 100%;
-        height: 435px;
-        background-size: contain;
-        position: absolute;
-        z-index: 950;
-        top: 250px;
-        min-height: 500px;
-        padding: 200px 0 0 0; }
-    .factory__glass {
-      width: 38%; }
-  .controls {
-    position: absolute;
-    top: 80px; }
-    .controls .textWrap {
-      width: 100%;
-      height: 300px;
-      padding: 20px; } }
 
 /*# sourceMappingURL=maps/style.css.map */
