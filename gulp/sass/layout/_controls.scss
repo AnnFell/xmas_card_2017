@@ -11,6 +11,8 @@ input, button {
       background-color: $darkBlue;
       width:            80%;
       cursor:           text;
+      border-right: solid 3px darken($blue, 10%);
+      border-bottom: solid 3px darken($blue, 10%);;
     }
     &[type=button] {
       background-color: $orange;

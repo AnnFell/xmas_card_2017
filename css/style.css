@@ -119,7 +119,9 @@ input, button {
   .controls input[type=text] {
     background-color: #176572;
     width: 80%;
-    cursor: text; }
+    cursor: text;
+    border-right: solid 3px #4d828b;
+    border-bottom: solid 3px #4d828b; }
   .controls input[type=button] {
     background-color: #E0630E;
     cursor: pointer;
