@@ -34,7 +34,7 @@ $(document).ready(function () {
         $('.textFill2').html(text2);
     }
 
-
+    //This function sets all things in motion after clicking on launch
     //Click on the Launch button
     $('.launch').on("click", function () {
 
@@ -64,13 +64,14 @@ $(document).ready(function () {
             position: 'fixed',
             width: '20px',
             height: '20px',
-            top: '-100px',
+            //top: '-100px',
+            top: '0', //debugging
             margin: '0',
             padding: '0',
             zIndex: 9999
         }
     );
-    var numFlakes = 100,
+    var numFlakes = 5,
         posX,
         size,
         opacity,
@@ -112,17 +113,19 @@ $(document).ready(function () {
             //add the flake to the body
             singleFlake.appendTo("body");
 
+            pushText();
+
             //calculate the duration of the animation
             duration = Math.floor(Math.random()*10);
             delay = Math.random()*10;
             singleFlake.addClass('animation' + i);
             //add the animation
-            snowTimeline(duration, delay, 'animation' + i);
+            //snowTimeline(duration, delay, 'animation' + i); debugging
         }
     }
 
     function snowTimeline(duration, delay, element) {
-        console.log('made it so far!')
+        console.log('made it so far!');
         var snowAnimation = new TimelineMax();
         snowAnimation.to($('.' + element), duration, {top: "120vh", delay: delay});
         console.log(snowAnimation);

@@ -15,10 +15,10 @@ cssSources = ['sass/**/*.scss'];
 jsVendorSources = [
     'js/vendor/jquery-3.2.1.min.js',
     //'jsvendor/gsap/jquery.gsap.min.js',
-    'js/vendor/gsap/TweenMax.min.js',
-    'js/vendor/scrollmagic/uncompressed/ScrollMagic.js',
-    'js/vendor/scrollmagic/uncompressed/plugins/animation.gsap.js',
-    'js/vendor/scrollmagic/uncompressed/plugins/debug.addIndicators.js'
+    'js/vendor/gsap/TweenMax.min.js'
+    //'js/vendor/scrollmagic/uncompressed/ScrollMagic.js',
+    //'js/vendor/scrollmagic/uncompressed/plugins/animation.gsap.js',
+    //'js/vendor/scrollmagic/uncompressed/plugins/debug.addIndicators.js'
 ];
 jsCustomSources = [
     'js/main.js'
