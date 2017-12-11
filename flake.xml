@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 374 392" version="1">
+    <g fill="none" fill-rule="evenodd">
+        <path stroke="#FFF" stroke-width="20" d="M186 0v392M16 98l340 196m0-196L16 294"/>
+        <text fill="#FFF" transform="rotate(30 107 103)">
+            <tspan x="28" y="130" class="textFill">MERRY </tspan>
+        </text>
+        <text fill="#FFF" transform="rotate(90 218 81)">
+            <tspan x="138" y="98" class="textFill">MERRY </tspan>
+        </text>
+        <text fill="#FFF" transform="rotate(150 301 163)">
+            <tspan x="222" y="178" class="textFill">MERRY </tspan>
+        </text>
+        <text fill="#FFF" transform="rotate(-150 273 278)">
+            <tspan x="194" y="291" class="textFill">MERRY </tspan>
+        </text>
+        <text fill="#FFF" transform="rotate(-90 162 312)">
+            <tspan x="82" y="322" class="textFill">MERRY </tspan>
+        </text>
+        <text fill="#FFF" transform="rotate(-30 80 240)">
+            <tspan x="0" y="241" class="textFill">MERRY </tspan>
+        </text>
+        <text fill="#FFF" transform="rotate(-150 79 166)">
+            <tspan x="50" y="179" class="textFill2">X-MAS</tspan>
+        </text>
+        <text fill="#FFF" transform="rotate(-90 161 88)">
+            <tspan x="132" y="98" class="textFill2">X-MAS</tspan>
+        </text>
+        <text fill="#FFF" transform="rotate(-30 270 129)">
+            <tspan x="241" y="130" class="textFill2">X-MAS</tspan>
+        </text>
+        <text fill="#FFF" transform="rotate(30 299 214)">
+            <tspan x="270" y="241" class="textFill2">X-MAS</tspan>
+        </text>
+        <text fill="#FFF" transform="rotate(90 218 304)">
+            <tspan x="189" y="321" class="textFill2">X-MAS</tspan>
+        </text>
+        <text fill="#FFF" transform="rotate(150 108 275)">
+            <tspan x="79" y="289" class="textFill2">X-MAS</tspan>
+        </text>
+    </g>
+</svg>
