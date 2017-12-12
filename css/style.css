@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=VT323");
 @import url("https://fonts.googleapis.com/css?family=Rubik+Mono+One");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -47,8 +48,8 @@ table {
   border-spacing: 0; }
 
 body, input, button {
-  font-family: 'Rubik Mono One', sans-serif;
-  line-height: 16px; }
+  font-family: 'VT323', monospace;
+  line-height: 40px; }
 
 a:link {
   color: white;
@@ -142,6 +143,8 @@ input, button {
   .launch:hover {
     background-color: #FF4200;
     border: solid 3px #4d828b; }
+  .launch--notActive {
+    background-color: #B8CCD1; }
 
 .factory {
   box-sizing: border-box;
@@ -188,6 +191,8 @@ input, button {
         margin-left: 10%;
         margin-right: 10%;
         margin-top: 12%; }
+        .factory__glass .snowflake svg path {
+          stroke-width: 10; }
     .factory__glass__front {
       background-image: url("../img/glass_front.svg");
       background-size: 100%;

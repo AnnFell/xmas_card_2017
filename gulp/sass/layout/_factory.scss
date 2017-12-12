@@ -48,6 +48,10 @@
         margin-left:  10%;
         margin-right: 10%;
         margin-top:  12%;
+        path {
+          //stroke-width:20px;
+          stroke-width: 10;
+        }
       }
     }
     &__front {

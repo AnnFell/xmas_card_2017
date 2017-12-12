@@ -18,11 +18,12 @@ $darkBlue: #176572;
 
 
 
-
+@import url('https://fonts.googleapis.com/css?family=VT323');
 @import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One');
 body, input, button {
-  font-family: 'Rubik Mono One', sans-serif;
-  line-height: 16px;
+  //font-family: 'Rubik Mono One', sans-serif;
+  font-family: 'VT323', monospace;
+  line-height: 40px;
 }
 
 a:link {
