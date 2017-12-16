@@ -30,8 +30,13 @@ $(document).ready(function () {
     function pushText() {
         text = $(".text").val();
         text2 = $(".text2").val();
-        if(text != false){ $('.textFill').html(text); }
-        if(text2 != false){$('.textFill2').html(text2); }
+
+        if(text == false || text2 == false){
+            $("<p>please fill in both boxes with a short text!</p>").appendTo("#controls");
+        }else {
+            $('.textFill').html(text);
+            $('.textFill2').html(text2);
+        }
     }
 
     //This function sets all things in motion after clicking on launch

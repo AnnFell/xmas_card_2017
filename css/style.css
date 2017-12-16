@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 @import url("https://fonts.googleapis.com/css?family=VT323");
-@import url("https://fonts.googleapis.com/css?family=Rubik+Mono+One");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -49,7 +49,8 @@ table {
 
 body, input, button {
   font-family: 'VT323', monospace;
-  line-height: 40px; }
+  font-size: 30px;
+  line-height: 20px; }
 
 a:link {
   color: white;
@@ -190,9 +191,10 @@ input, button {
         width: 80%;
         margin-left: 10%;
         margin-right: 10%;
-        margin-top: 12%; }
+        margin-top: 12%;
+        font-size: 50px; }
         .factory__glass .snowflake svg path {
-          stroke-width: 10; }
+          stroke-width: 8; }
     .factory__glass__front {
       background-image: url("../img/glass_front.svg");
       background-size: 100%;
