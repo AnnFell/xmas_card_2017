@@ -111,6 +111,16 @@ body {
 svg {
   font-size: 30px; }
 
+.message {
+  background-color: #639EA8;
+  width: 80%;
+  margin: 0 10%;
+  position: absolute;
+  z-index: 400;
+  text-align: center;
+  padding: 50px;
+  top: -500px; }
+
 input, button {
   cursor: pointer; }
 
@@ -124,13 +134,14 @@ input, button {
     cursor: text;
     border-right: solid 3px #4d828b;
     border-bottom: solid 3px #4d828b; }
-  .controls input[type=button] {
-    background-color: #E0630E;
-    cursor: pointer;
-    border-bottom: solid 3px #84b2ba; }
-    .controls input[type=button]:hover {
-      background-color: #FF4200;
-      border-bottom: solid 3px #4d828b; }
+
+button {
+  background-color: #E0630E;
+  cursor: pointer;
+  border-bottom: solid 3px #84b2ba; }
+  button:hover {
+    background-color: #FF4200;
+    border-bottom: solid 3px #4d828b; }
 
 .launch {
   display: block;
@@ -138,9 +149,8 @@ input, button {
   border-radius: 100%;
   height: 100px;
   width: 100px;
-  margin: 0 auto;
-  border: solid 3px #84b2ba;
-  margin-top: 20px; }
+  margin: 20px auto 0 auto;
+  border: solid 3px #84b2ba; }
   .launch:hover {
     background-color: #FF4200;
     border: solid 3px #4d828b; }

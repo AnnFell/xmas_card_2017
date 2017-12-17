@@ -1,14 +1,16 @@
 * {
   box-sizing: border-box;
 }
+
 body, html {
-  height:100%;
+  height: 100%;
 }
+
 body {
-  overflow: hidden;
-  position: relative;
+  overflow:         hidden;
+  position:         relative;
   background-color: $grey;
-  color: white;
+  color:            white;
   //background-image: url('../img/happynewyear.svg');
   //background-size: 80%;
   //background-position: center top;
@@ -29,13 +31,24 @@ body {
 }
 
 #page {
-  width: calc(100% - 300px);
-  height:100%;
-  float:right;
+  width:  calc(100% - 300px);
+  height: 100%;
+  float:  right;
   //background-color:yellow;
 }
 
 svg {
-  font-size:30px;
+  font-size: 30px;
+}
+
+.message {
+  background-color: $blue;
+  width:            80%;
+  margin:           0 10%;
+  position:         absolute;
+  z-index:          400;
+  text-align:       center;
+  padding:          50px;
+  top:              -500px;
 }
 
