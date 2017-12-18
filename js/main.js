@@ -38,8 +38,7 @@ $(document).ready(function () {
 
 
     var factoryFlake = $('.snowflake');
-
-    //Snowflake drift
+    //Snowflake drift in glass tube
     TweenMax.to(factoryFlake, 2, {top: '-20px', repeat: -1, ease: Power1.easeInOut, yoyo: true});
 
 
@@ -48,6 +47,7 @@ $(document).ready(function () {
         pushText();
     });
 
+    //add text to snowflake(s)
     function pushText() {
         var text, text2, stroke;
 
@@ -84,7 +84,8 @@ $(document).ready(function () {
         timeline
             .to($('.factory'), 0.5, ({marginTop: '10px', repeat: 2, ease: Bounce.easeInOut, yoyo: true}))
             .to(factoryFlake, 0.8, {top: '100px', ease: Bounce.easeInOut, yoyo: true})
-            .to(factoryFlake, 0.4, {top: '-1200px', ease: Power3.easeOut});
+            .to(factoryFlake, 0.4, {top: '-1000px', ease: Power3.easeOut})
+            .to(factoryFlake, 0.1, {autoAlpha: 0});
     }
 
 
@@ -95,15 +96,10 @@ $(document).ready(function () {
                 color: '#eee',
                 display: 'block',
                 position: 'fixed',
-                width: '20px',
-                height: '20px',
                 top: '-100px',
-                margin: '0',
-                padding: '0',
                 zIndex: 9999
             }
         );
-    //console.log(snowFlake);
 
 
     var numFlakes = 50,
@@ -122,15 +118,12 @@ $(document).ready(function () {
 
             //give a random y position to start
             posX = Math.floor(Math.random()*viewportWidth);
-            //console.log(posX);
 
             //give a random size between 20px and 50px
             size = getRandomInt(20,100);
-            //console.log(size);
 
             //give random rotation
             rotation = getRandomInt(-180,160);
-            //console.log(rotation);
 
             //give an opacity
             if(size < 30){
@@ -158,19 +151,17 @@ $(document).ready(function () {
             duration = Math.floor(Math.random()*10);
             delay = Math.random()*10;
             singleFlake.addClass('animation' + i);
+
             //add the animation
-            snowAnimation(duration, rotation, delay, 'animation' + i); //debugging
+            snowAnimation(duration, rotation, delay, 'animation' + i);
         }
     }
 
     //the snowing animation
     function snowAnimation(duration, rotation, delay, element) {
-        //console.log('made it so far!');
         var snowTimeline = new TimelineMax();
         snowTimeline
             .to($('.' + element), duration, {top: "120vh", rotation: rotation, delay: delay});
-
-        //console.log(snowAnimation);
         return snowTimeline;
     }
 
@@ -181,7 +172,7 @@ $(document).ready(function () {
             .to($('#controls, #page'), 3, {autoAlpha: 0, ease: Power2.EaseIn}, "+=3.5")
             .to($('body'), 3, {backgroundColor: '#333', ease: Power2.EaseOut}, "-=2.75")
             .to($('.message'), 5, { opacity: 1, autoAlpha: 1, display: 'block', ease: Power1.easeOut}, "+=1.5")
-            .from($('.startAgain'), 0.2, {transform: 'scale(1.1,1.1)', repeat: 1,  ease: Elastic, yoyo: true});
+            .from($('.startAgain'), 0.2, {transform: 'scale(1.1,1.1)', repeat: 1,  ease: Back, yoyo: true});
         return messageAnimation;
     }
 
