@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-    //alert('jQuery werkt');
-
     //other functions
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -16,32 +14,32 @@ $(document).ready(function () {
     });
     //end
 
+
     var factoryFlake = $('.snowflake');
 
     //Snowflake drift
     TweenMax.to(factoryFlake, 2, {top: '-20px', repeat: -1, ease: Power1.easeInOut, yoyo: true});
 
 
-    var text, text2, stroke;
-
-    $(".text, .text2, .stroke").bind('input', function () {
-        text = $(".text").val();
-        text2 = $(".text2").val();
-        stroke = $(".stroke").val();
-        $('.textFill').html(text);
-        $('.textFill2').html(text2);
-        $('svg path').css({strokeWidth: stroke});
-
+    //show text input result while typing
+    $(".text, .text2, .stroke").on('input', function () {
+        pushText();
     });
 
     function pushText() {
-        if(text == false && text2 == false){
-            $('svg path').css({strokeWidth: stroke});
-        }else {
-            $('.textFill').html(text);
-            $('.textFill2').html(text2);
-            $('svg path').css({strokeWidth: stroke});
-        }
+        var text, text2, stroke;
+
+        text = $(".text").val();
+        text2 = $(".text2").val();
+        stroke = $(".stroke").val();
+
+            if(text != false){
+                $('.textFill').html(text);
+            }
+            if(text2 != false){
+                $('.textFill2').html(text2);
+            }
+            $('.pathFill').css({strokeWidth: stroke});
     }
 
     //This function sets all things in motion after clicking on launch
@@ -54,6 +52,8 @@ $(document).ready(function () {
         launchAnimation();
 
         setTimeout(makeItSnow, 2700);
+
+        messageAnimation();
     });
 
 
@@ -67,7 +67,7 @@ $(document).ready(function () {
 
 
     //the master snowflake
-    var snowFlake = $('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 382 393" version="1"> <g fill="none" fill-rule="evenodd"> <path stroke="#FFF" d="M191 1v392M21 99l340 196m0-196L21 295"/> <text fill="#FFF" transform="rotate(30 109 107)"> <tspan x="27" y="132" class="textFill">MERRY </tspan> </text> <text fill="#FFF" transform="rotate(90 223 80)"> <tspan x="142" y="97" class="textFill">MERRY </tspan> </text> <text fill="#FFF" transform="rotate(150 308 163)"> <tspan x="228" y="178" class="textFill">MERRY </tspan> </text> <text fill="#FFF" transform="rotate(-150 280 281)"> <tspan x="200" y="294" class="textFill">MERRY </tspan> </text> <text fill="#FFF" transform="rotate(-90 165 316)"> <tspan x="85" y="327" class="textFill">MERRY </tspan> </text> <text fill="#FFF" transform="rotate(-30 78 243)"> <tspan x="0" y="246" class="textFill">MERRY </tspan> </text> <text fill="#FFF" transform="rotate(30 84 153)"> <tspan x="2" y="178" class="textFill2">X-MAS</tspan> </text> <text fill="#FFF" transform="rotate(90 168 81)"> <tspan x="87" y="98" class="textFill2">X-MAS</tspan> </text> <text fill="#FFF" transform="rotate(150 280 117)"> <tspan x="200" y="132" class="textFill2">X-MAS</tspan> </text> <text fill="#FFF" transform="rotate(-150 306 232)"> <tspan x="226" y="245" class="textFill2">X-MAS</tspan> </text> <text fill="#FFF" transform="rotate(-90 221 314)"> <tspan x="141" y="325" class="textFill2">X-MAS</tspan> </text> <text fill="#FFF" transform="rotate(-30 107 289)"> <tspan x="29" y="292" class="textFill2">X-MAS</tspan> </text> </g> </svg>')
+    var snowFlake = $('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 372 393" version="1"><g fill="none" fill-rule="evenodd"><path stroke="#FFF" class="pathFill" d="M186 1v392M16 99l340 196m0-196L16 295"/><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(30 103 111)"><tspan x="21" y="135" class="textFill">MERRY </tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="36" transform="rotate(90 210 81)"><tspan x="129" y="96" class="textFill">MERRY </tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(150 299 158)"><tspan x="219" y="172" class="textFill">MERRY </tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(-150 277 274)"><tspan x="197" y="286" class="textFill">MERRY </tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(-90 167 314)"><tspan x="87" y="324" class="textFill">MERRY </tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(-30 77 247)"><tspan x="-1" y="249" class="textFill">MERRY </tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(30 82 146)"><tspan x="0" y="170" class="textFill2">X-MAS</tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(90 170 80)"><tspan x="89" y="96" class="textFill2">X-MAS</tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(150 278 122)"><tspan x="198" y="136" class="textFill2">X-MAS</tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(-150 298 238)"><tspan x="218" y="250" class="textFill2">X-MAS</tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(-90 209 314)"><tspan x="128" y="323" class="textFill2">X-MAS</tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(-30 106 297)"><tspan x="28" y="283" class="textFill2">X-MAS</tspan></text></g></svg>')
         .css(
             {
                 color: '#eee',
@@ -76,7 +76,6 @@ $(document).ready(function () {
                 width: '20px',
                 height: '20px',
                 top: '-100px',
-                //top: '0', //debugging
                 margin: '0',
                 padding: '0',
                 zIndex: 9999
@@ -90,7 +89,8 @@ $(document).ready(function () {
         size,
         opacity,
         duration,
-        delay;
+        delay,
+        rotation;
 
     function makeItSnow() {
         //for every flake in numFlakes
@@ -106,6 +106,9 @@ $(document).ready(function () {
             size = getRandomInt(20,100);
             //console.log(size);
 
+            //give random rotation
+            rotation = getRandomInt(-180,160);
+            //console.log(rotation);
 
             //give an opacity
             if(size < 30){
@@ -134,19 +137,16 @@ $(document).ready(function () {
             delay = Math.random()*10;
             singleFlake.addClass('animation' + i);
             //add the animation
-            snowAnimation(duration, delay, 'animation' + i); //debugging
+            snowAnimation(duration, rotation, delay, 'animation' + i); //debugging
         }
-        messageAnimation();
     }
 
     //the snowing animation
-    function snowAnimation(duration, delay, element) {
+    function snowAnimation(duration, rotation, delay, element) {
         //console.log('made it so far!');
         var snowTimeline = new TimelineMax();
         snowTimeline
-            .to($('.' + element), duration, {top: "120vh", delay: delay})
-            .to($('#controls, #page'), 3, {autoAlpha: 0, ease: Power2.EaseIn})
-            .to($('body'), 2, {backgroundColor: 'black', ease: Power2.EaseOut});
+            .to($('.' + element), duration, {top: "120vh", rotation: rotation, delay: delay});
 
         //console.log(snowAnimation);
         return snowTimeline;
@@ -156,8 +156,10 @@ $(document).ready(function () {
     function messageAnimation() {
         var messageTimeline = new TimelineMax();
         messageTimeline
-            //.to($('.message'), 5, {top: '30px', delay: delay, ease: Power2.easeIn});
-            .to($('.message'), 5, { opacity: 1, autoAlpha: 1, display: 'block', ease: Power2.easeIn}, "+=3");
+            .to($('#controls, #page'), 3, {autoAlpha: 0, ease: Power2.EaseIn}, "+=3.5")
+            .to($('body'), 3, {backgroundColor: '#333', ease: Power2.EaseOut}, "-=2.75")
+            .to($('.message'), 5, { opacity: 1, autoAlpha: 1, display: 'block', ease: Power1.easeOut}, "+=1.5")
+            .from($('.startAgain'), 0.2, {transform: 'scale(1.1,1.1)', repeat: 1,  ease: Elastic, yoyo: true});
         return messageAnimation;
     }
 

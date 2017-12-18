@@ -40,7 +40,4 @@ button {
     background-color: $red;
     border:           solid 3px darken($blue, 10%);;
   }
-  &--notActive {
-    background-color: $glass;
-  }
 }
