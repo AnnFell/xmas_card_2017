@@ -22,18 +22,21 @@ $(document).ready(function () {
     TweenMax.to(factoryFlake, 2, {top: '-20px', repeat: -1, ease: Power1.easeInOut, yoyo: true});
 
 
-    $('.test').on("click", function () {
-        pushText();
-    });
-
     var text, text2, stroke;
-    function pushText() {
+
+    $(".text, .text2, .stroke").bind('input', function () {
         text = $(".text").val();
         text2 = $(".text2").val();
         stroke = $(".stroke").val();
+        $('.textFill').html(text);
+        $('.textFill2').html(text2);
+        $('svg path').css({strokeWidth: stroke});
 
-        if(text == false || text2 == false){
-            $("<p>please fill in both boxes with a short text!</p>").appendTo("#controls");
+    });
+
+    function pushText() {
+        if(text == false && text2 == false){
+            $('svg path').css({strokeWidth: stroke});
         }else {
             $('.textFill').html(text);
             $('.textFill2').html(text2);
@@ -64,7 +67,7 @@ $(document).ready(function () {
 
 
     //the master snowflake
-    var snowFlake = $('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 374 392" version="1"> <g fill="none" fill-rule="evenodd"> <path stroke="#FFF" d="M186 0v392M16 98l340 196m0-196L16 294"/> <text fill="#FFF" transform="rotate(30 107 103)"> <tspan x="28" y="130" class="textFill">MERRY </tspan> </text> <text fill="#FFF" transform="rotate(90 218 81)"> <tspan x="138" y="98" class="textFill">MERRY </tspan> </text> <text fill="#FFF" transform="rotate(150 301 163)"> <tspan x="222" y="178" class="textFill">MERRY </tspan> </text> <text fill="#FFF" transform="rotate(-150 273 278)"> <tspan x="194" y="291" class="textFill">MERRY </tspan> </text> <text fill="#FFF" transform="rotate(-90 162 312)"> <tspan x="82" y="322" class="textFill">MERRY </tspan> </text> <text fill="#FFF" transform="rotate(-30 80 240)"> <tspan x="0" y="241" class="textFill">MERRY </tspan> </text> <text fill="#FFF" transform="rotate(-150 79 166)"> <tspan x="50" y="179" class="textFill2">X-MAS</tspan> </text> <text fill="#FFF" transform="rotate(-90 161 88)"> <tspan x="132" y="98" class="textFill2">X-MAS</tspan> </text> <text fill="#FFF" transform="rotate(-30 270 129)"> <tspan x="241" y="130" class="textFill2">X-MAS</tspan> </text> <text fill="#FFF" transform="rotate(30 299 214)"> <tspan x="270" y="241" class="textFill2">X-MAS</tspan> </text> <text fill="#FFF" transform="rotate(90 218 304)"> <tspan x="189" y="321" class="textFill2">X-MAS</tspan> </text> <text fill="#FFF" transform="rotate(150 108 275)"> <tspan x="79" y="289" class="textFill2">X-MAS</tspan> </text> </g> </svg>')
+    var snowFlake = $('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 382 393" version="1"> <g fill="none" fill-rule="evenodd"> <path stroke="#FFF" d="M191 1v392M21 99l340 196m0-196L21 295"/> <text fill="#FFF" transform="rotate(30 109 107)"> <tspan x="27" y="132" class="textFill">MERRY </tspan> </text> <text fill="#FFF" transform="rotate(90 223 80)"> <tspan x="142" y="97" class="textFill">MERRY </tspan> </text> <text fill="#FFF" transform="rotate(150 308 163)"> <tspan x="228" y="178" class="textFill">MERRY </tspan> </text> <text fill="#FFF" transform="rotate(-150 280 281)"> <tspan x="200" y="294" class="textFill">MERRY </tspan> </text> <text fill="#FFF" transform="rotate(-90 165 316)"> <tspan x="85" y="327" class="textFill">MERRY </tspan> </text> <text fill="#FFF" transform="rotate(-30 78 243)"> <tspan x="0" y="246" class="textFill">MERRY </tspan> </text> <text fill="#FFF" transform="rotate(30 84 153)"> <tspan x="2" y="178" class="textFill2">X-MAS</tspan> </text> <text fill="#FFF" transform="rotate(90 168 81)"> <tspan x="87" y="98" class="textFill2">X-MAS</tspan> </text> <text fill="#FFF" transform="rotate(150 280 117)"> <tspan x="200" y="132" class="textFill2">X-MAS</tspan> </text> <text fill="#FFF" transform="rotate(-150 306 232)"> <tspan x="226" y="245" class="textFill2">X-MAS</tspan> </text> <text fill="#FFF" transform="rotate(-90 221 314)"> <tspan x="141" y="325" class="textFill2">X-MAS</tspan> </text> <text fill="#FFF" transform="rotate(-30 107 289)"> <tspan x="29" y="292" class="textFill2">X-MAS</tspan> </text> </g> </svg>')
         .css(
             {
                 color: '#eee',
@@ -140,7 +143,11 @@ $(document).ready(function () {
     function snowAnimation(duration, delay, element) {
         //console.log('made it so far!');
         var snowTimeline = new TimelineMax();
-        snowTimeline.to($('.' + element), duration, {top: "120vh", delay: delay});
+        snowTimeline
+            .to($('.' + element), duration, {top: "120vh", delay: delay})
+            .to($('#controls, #page'), 3, {autoAlpha: 0, ease: Power2.EaseIn})
+            .to($('body'), 2, {backgroundColor: 'black', ease: Power2.EaseOut});
+
         //console.log(snowAnimation);
         return snowTimeline;
     }
@@ -148,13 +155,16 @@ $(document).ready(function () {
     //the message animation at the end
     function messageAnimation() {
         var messageTimeline = new TimelineMax();
-        messageTimeline.to($('.message'), 1, {top: '30px', delay: delay});
+        messageTimeline
+            //.to($('.message'), 5, {top: '30px', delay: delay, ease: Power2.easeIn});
+            .to($('.message'), 5, { opacity: 1, autoAlpha: 1, display: 'block', ease: Power2.easeIn}, "+=3");
         return messageAnimation;
     }
 
+    //reload the browser after clicking on button in final message
     $('.startAgain').on("click", function () {
         window.location.reload();
-    })
+    });
 
 
 });
