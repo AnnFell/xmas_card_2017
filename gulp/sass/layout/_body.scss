@@ -20,7 +20,7 @@ body {
 
 #controls {
   background-color: $blue;
-  width:            300px;
+  max-width:        300px;
   height:           100%;
   float:            left;
   padding:          30px;
@@ -47,7 +47,7 @@ svg {
   margin:           10% 10%;
   padding:          50px;
   position:         absolute;
-  //z-index:          400;
+  top:              0;
   text-align:       center;
   z-index:          9999; //debugging
   display:          none;
