@@ -71,7 +71,7 @@ $(document).ready(function () {
     var snowFlake = $('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 372 393" version="1"><g fill="none" fill-rule="evenodd"><path stroke="#FFF" class="pathFill" d="M186 1v392M16 99l340 196m0-196L16 295"/><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(30 103 111)"><tspan x="21" y="135" class="textFill">MERRY </tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="36" transform="rotate(90 210 81)"><tspan x="129" y="96" class="textFill">MERRY </tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(150 299 158)"><tspan x="219" y="172" class="textFill">MERRY </tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(-150 277 274)"><tspan x="197" y="286" class="textFill">MERRY </tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(-90 167 314)"><tspan x="87" y="324" class="textFill">MERRY </tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(-30 77 247)"><tspan x="-1" y="249" class="textFill">MERRY </tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(30 82 146)"><tspan x="0" y="170" class="textFill2">X-MAS</tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(90 170 80)"><tspan x="89" y="96" class="textFill2">X-MAS</tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(150 278 122)"><tspan x="198" y="136" class="textFill2">X-MAS</tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(-150 298 238)"><tspan x="218" y="250" class="textFill2">X-MAS</tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(-90 209 314)"><tspan x="128" y="323" class="textFill2">X-MAS</tspan></text><text fill="#FFF" font-family="VT323-Regular, VT323" font-size="40" transform="rotate(-30 106 297)"><tspan x="28" y="283" class="textFill2">X-MAS</tspan></text></g></svg>')
         .css(
             {
-                color: '#eee',
+                color: '#fff',
                 display: 'block',
                 position: 'fixed',
                 top: '-100px',
@@ -97,11 +97,11 @@ $(document).ready(function () {
             //give a random y position to start
             posX = Math.floor(Math.random()*viewportWidth);
 
-            //give a random size between 20px and 50px
+            //give a random size between 20px and 100px
             size = getRandomInt(20,100);
 
             //give random rotation
-            rotation = getRandomInt(-180,160);
+            rotation = getRandomInt(-180,180);
 
             //give an opacity
             if(size < 30){

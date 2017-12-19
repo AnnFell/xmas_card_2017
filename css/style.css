@@ -180,7 +180,7 @@ button {
       background-size: contain;
       background-repeat: no-repeat; }
   .factory__glass {
-    width: 300px;
+    width: 100%;
     height: 100%;
     margin: 0 auto;
     position: relative;
@@ -188,13 +188,15 @@ button {
     .factory__glass__back {
       background-image: url("../img/glass_back.svg");
       background-size: 100%;
-      width: 100%;
+      width: 54%;
+      margin: 0 23%;
       height: 100%;
       position: absolute;
       z-index: 800;
       opacity: 0.5; }
     .factory__glass .snowflake {
-      width: 100%;
+      width: 54%;
+      margin: 0 23%;
       height: 100%;
       position: absolute;
       z-index: 850; }
@@ -209,9 +211,41 @@ button {
     .factory__glass__front {
       background-image: url("../img/glass_front.svg");
       background-size: 100%;
-      width: 100%;
+      width: 54%;
+      margin: 0 23%;
       height: 100%;
       position: absolute;
       z-index: 900; }
+
+.dashL, .dashM, .dashR {
+  margin: 0;
+  float: left;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: contain;
+  position: relative; }
+
+.dash {
+  position: absolute;
+  bottom: 150px;
+  height: 100%;
+  width: 100%;
+  z-index: 700; }
+  .dashL {
+    width: 23%; }
+    .dashL svg {
+      position: absolute;
+      bottom: 0; }
+  .dashM {
+    width: 54%; }
+    .dashM svg {
+      position: absolute;
+      bottom: 0; }
+  .dashR {
+    width: 23%; }
+    .dashR svg {
+      position: absolute;
+      bottom: 0; }
 
 /*# sourceMappingURL=maps/style.css.map */
