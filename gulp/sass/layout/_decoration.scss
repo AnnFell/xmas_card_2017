@@ -90,6 +90,7 @@ svg {
 .gears {
   position:  absolute;
   width:     30%;
+  max-height: 100%;
   transform: rotate(90deg);
   right:     -20px;
   bottom:    20px;
@@ -100,6 +101,7 @@ svg {
   opacity: 0.2;
   padding: 30px;
   margin-bottom: 40px;
+  box-sizing: border-box;
 }
 
 @keyframes graph {

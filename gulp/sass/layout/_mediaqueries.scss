@@ -18,7 +18,10 @@
 }
 
 // Small devices (landscape phones, less than 768px)
-@media (max-width: 767px) {
+@media (max-width: 900px) {
+  .desktop {
+    display: none;
+  }
   body {
     font-size: 25px;
   }
@@ -39,18 +42,30 @@
       float: left;
     }
     &__launch {
+      margin-left: 2%;
       float:       right;
-      text-align:  center;
+      //text-align:  center;
       display:     block;
-      height:      100%;
+      //height:      100%;
+      //min-height: 30px;
+      width:       28%;
     }
     &input {
       padding:   5px;
       font-size: 18px;
     }
   }
+  .launch {
+  //  font-size:     25px;
+  //  margin:        0 auto;
+  //  min-width:     50%;
+  //  height: auto;
+  }
   .startAgain {
     font-size: 20px;
+  }
+  #textWrap {
+    padding:15px;
   }
   #page {
     width:      100%;
@@ -71,30 +86,42 @@
   .dash {
     bottom: 100px;
   }
-  .launch {
-    width:         100%;
-    border-radius: 0;
-    font-size:     25px;
-    margin:        0 auto;
-    min-height:    100px;
-  }
   .message {
     margin: 5%;
     width:  90%;
   }
   //Hide decoration
-  .screen, .kabels, .kabelOranje, .buttonsSVG {
+  .screen, .kabels, .kabelOranje, .buttonsSVG, .schuinV, .gears, .meter {
     display: none;
   }
 }
 
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575px) {
+  body {
+    font-size: 20px;
+  }
   #controls {
     min-width: 100%;
   }
+  //.controls {
+  //  &__wrap {
+  //    width: 100%;
+  //    float: none;
+  //  }
+  //  &__launch {
+  //    width:       100%;
+  //    float:       none;
+  //    margin-left: 0%;
+  //  }
+  //}
+  //.launch {
+  //  margin: 5px auto;
+  //  //min-height: 30px;
+  //}
+//}
   #textWrap {
-    padding: 15px;
+    padding: 5px;
   }
   #page {
     width: 100%;

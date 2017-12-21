@@ -95,7 +95,13 @@ body {
   overflow: hidden;
   position: relative;
   background-color: #D8D8D8;
-  color: white; }
+  color: white;
+  height: 100vh !important;
+  overflow: hidden; }
+
+.preview {
+  position: absolute;
+  left: -800px; }
 
 #controls {
   background-color: #639EA8;
@@ -271,7 +277,9 @@ button {
   .controls input {
     font-size: 20px; } }
 
-@media (max-width: 767px) {
+@media (max-width: 900px) {
+  .desktop {
+    display: none; }
   body {
     font-size: 25px; }
   #controls {
@@ -288,15 +296,17 @@ button {
     width: 70%;
     float: left; }
   .controls__launch {
+    margin-left: 2%;
     float: right;
-    text-align: center;
     display: block;
-    height: 100%; }
+    width: 28%; }
   .controlsinput {
     padding: 5px;
     font-size: 18px; }
   .startAgain {
     font-size: 20px; }
+  #textWrap {
+    padding: 15px; }
   #page {
     width: 100%;
     min-height: 100px;
@@ -312,23 +322,19 @@ button {
     padding-top: 10px; }
   .dash {
     bottom: 100px; }
-  .launch {
-    width: 100%;
-    border-radius: 0;
-    font-size: 25px;
-    margin: 0 auto;
-    min-height: 100px; }
   .message {
     margin: 5%;
     width: 90%; }
-  .screen, .kabels, .kabelOranje, .buttonsSVG {
+  .screen, .kabels, .kabelOranje, .buttonsSVG, .schuinV, .gears, .meter {
     display: none; } }
 
 @media (max-width: 575px) {
+  body {
+    font-size: 20px; }
   #controls {
     min-width: 100%; }
   #textWrap {
-    padding: 15px; }
+    padding: 5px; }
   #page {
     width: 100%; }
   .factory__dash {
@@ -415,6 +421,7 @@ svg {
 .gears {
   position: absolute;
   width: 30%;
+  max-height: 100%;
   transform: rotate(90deg);
   right: -20px;
   bottom: 20px;
@@ -423,7 +430,8 @@ svg {
 .buttonsSVG {
   opacity: 0.2;
   padding: 30px;
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  box-sizing: border-box; }
 
 @keyframes graph {
   0% {

@@ -66,7 +66,9 @@ $(document).ready(function () {
 
     //This function sets all things in motion after clicking on launch
     //Click on the Launch button
-    $('.launch').on("click", function () {
+    $('.launch').on("click touch", function () {
+
+        $(this).css('background-color', 'grey');
 
         TweenMax.killTweensOf('.snowflake');
 
@@ -199,7 +201,7 @@ $(document).ready(function () {
     }
 
     //reload the browser after clicking on button in final message
-    $('.startAgain').on("click", function () {
+    $('.startAgain').on("click touch", function () {
         window.location.reload();
     });
 
