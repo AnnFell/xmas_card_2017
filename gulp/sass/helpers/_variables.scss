@@ -15,8 +15,11 @@ $glass:#B8CCD1;
 $blue: #639EA8;
 $darkBlue: #176572;
 
-
-
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
 @import url('https://fonts.googleapis.com/css?family=VT323');
 //@import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One');

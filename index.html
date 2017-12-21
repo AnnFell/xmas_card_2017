@@ -60,12 +60,16 @@
 
 
     <div id="textWrap">
-        <div class="controls">
-            <h1>Build your own snowflake</h1>
-            <input type="text" name="text" class="text" placeholder="MERRY">
-            <input type="text" name="text2" class="text2" placeholder="X-MAS">
-            <input type="range" name="stroke" class="stroke" min="1" max="20" step="1">
-            <button class="launch mobile">Launch</button>
+        <div class="controls clearfix">
+            <div class="controls__wrap">
+                <h1>Build your own snowflake</h1>
+                <input type="text" name="text" class="text" placeholder="MERRY">
+                <input type="text" name="text2" class="text2" placeholder="X-MAS">
+                <input type="range" name="stroke" class="stroke" min="1" max="20" step="1">
+            </div>
+            <div class="controls__launch">
+                <button class="launch mobile">Launch</button>
+            </div>
         </div>
 
     </div>
@@ -106,13 +110,13 @@
             <div class="gears">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 354 172">
                     <g data-name="Laag 12">
-                        <path class="gears__wheel" fill="#d8d8d8"
+                        <path class="gears__wheel" id="wheel1" fill="#d8d8d8"
                               d="M354 107V65h-24a65 65 0 0 0-4-8l18-17-30-30-17 18a65 65 0 0 0-8-4V0h-42v24a65 65 0 0 0-8 4l-17-18-30 30 18 17a65 65 0 0 0-4 8h-24v42h24a65 65 0 0 0 4 8l-18 17 30 30 17-18a65 65 0 0 0 8 4v24h42v-24a65 65 0 0 0 8-4l17 18 30-30-18-17a65 65 0 0 0 4-8z"/>
                         <circle cx="268" cy="86" r="34" fill="#639ea8"/>
                         <circle cx="268" cy="86" r="18" fill="#176572"/>
                         <path fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="4"
                               d="M47 62l219-16s42-2 42 39-42 42-42 42L47 110s-27 1-27-24 27-24 27-24z"/>
-                        <path class="gears__wheel" fill="#d3d3d3"
+                        <path class="gears__wheel" id="wheel1" fill="#d3d3d3"
                               d="M73 94V79h-7a30 30 0 0 0-3-8l5-5-11-11-5 5a30 30 0 0 0-8-3v-7H29v7a30 30 0 0 0-8 3l-5-5L5 66l5 5a30 30 0 0 0-3 8H0v15h7a30 30 0 0 0 3 8l-5 5 11 10 5-5a30 30 0 0 0 8 4v7h15v-7a30 30 0 0 0 8-4l5 5 11-10-5-5a30 30 0 0 0 3-8z"/>
                         <ellipse cx="37" cy="86" fill="#e0630e" rx="12" ry="13"/>
                     </g>
@@ -122,8 +126,10 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 276 391">
                     <g id="Laag_2" data-name="Laag 2">
                         <g id="Laag_12" data-name="Laag 12">
-                            <path fill="none" stroke="#e0630e" stroke-linejoin="round" stroke-width="20" d="M104 366h102l60-76-118-82 72-158L25 10v165"/>
-                            <path d="M-8 149h66v51H-8z" class="cls-2" style="fill:#639ea8" transform="rotate(-90 26 175)"/>
+                            <path fill="none" stroke="#e0630e" stroke-linejoin="round" stroke-width="20"
+                                  d="M104 366h102l60-76-118-82 72-158L25 10v165"/>
+                            <path d="M-8 149h66v51H-8z" class="cls-2" style="fill:#639ea8"
+                                  transform="rotate(-90 26 175)"/>
                             <path d="M51 340h81v51H51z" class="cls-2" style="fill:#639ea8"/>
                         </g>
                     </g>

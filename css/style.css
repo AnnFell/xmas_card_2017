@@ -47,6 +47,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table; }
+
 body, input, button {
   font-family: 'VT323', monospace;
   font-size: 30px; }
@@ -161,7 +166,7 @@ button {
     background-color: #FF4200;
     border: solid 3px #4d828b; }
 
-.launch.mobile {
+.controls__launch {
   display: none; }
 
 .factory {
@@ -276,7 +281,17 @@ button {
     margin: 0;
     text-align: center;
     border-bottom: solid 5px #176572; }
-  .controls input {
+  .controls__wrap {
+    width: 70%;
+    float: left; }
+  .controls__launch {
+    float: right;
+    text-align: center;
+    vertical-align: bottom;
+    padding-top: 40px;
+    display: block;
+    position: relative; }
+  .controlsinput {
     padding: 5px;
     font-size: 18px; }
   .startAgain {
@@ -295,15 +310,14 @@ button {
   .dash {
     bottom: 100px; }
   .launch {
-    height: 80px;
-    width: 80px;
-    font-size: 25px; }
-  .launch.mobile {
-    display: block; }
+    height: 100px;
+    width: 100px;
+    font-size: 25px;
+    margin: 0 auto; }
   .message {
     margin: 5%;
     width: 90%; }
-  .screen, .kabels {
+  .screen, .kabels, .kabelOranje {
     display: none; } }
 
 @media (max-width: 575px) {
@@ -326,6 +340,9 @@ button {
 input::placeholder {
   color: white; }
 
+svg {
+  transform-box: fill-box; }
+
 #controls {
   position: relative; }
   #controls h1 {
@@ -334,7 +351,8 @@ input::placeholder {
     position: relative;
     margin-bottom: 20px;
     border-right: #f6f8f9 solid 3px;
-    border-bottom: #f6f8f9 solid 3px; }
+    border-bottom: #f6f8f9 solid 3px;
+    text-align: center; }
     #controls h1:before {
       content: "'";
       position: absolute;
@@ -361,9 +379,6 @@ input::placeholder {
   width: 100px;
   top: 30px;
   right: -80px; }
-  .meter .pointer {
-    animation: pointer 1.5s infinite alternate ease-in-out;
-    transform-origin: bottom center; }
 
 .connection {
   width: 500px;
@@ -404,9 +419,6 @@ input::placeholder {
   right: -20px;
   bottom: 20px;
   z-index: 5; }
-  .gears__wheel {
-    animation: rotate 8s infinite linear;
-    transform-origin: center center; }
 
 @keyframes pointer {
   0% {

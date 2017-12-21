@@ -2,6 +2,10 @@ input::placeholder {
   color: white;
 }
 
+svg {
+  transform-box: fill-box;
+}
+
 #controls {
   position: relative;
   h1 {
@@ -11,6 +15,7 @@ input::placeholder {
     margin-bottom:    20px;
     border-right:     lighten($glass, 20%) solid 3px;
     border-bottom:    lighten($glass, 20%) solid 3px;
+    text-align:       center;
     &:before {
       content:  "'";
       position: absolute;
@@ -43,10 +48,6 @@ input::placeholder {
   width:    100px;
   top:      30px;
   right:    -80px;
-  .pointer {
-    animation:        pointer 1.5s infinite alternate ease-in-out;
-    transform-origin: bottom center;
-  }
 }
 
 .connection {
@@ -56,7 +57,6 @@ input::placeholder {
   left:     -450px;
   bottom:   50px;
   border:   solid $blue 8px;
-
 }
 
 .screen {
@@ -68,7 +68,7 @@ input::placeholder {
   .graph {
     animation:        graph 1s infinite alternate;
     transform-origin: center center;
-    opacity: 0.5;
+    opacity:          0.5;
   }
 }
 
@@ -94,10 +94,6 @@ input::placeholder {
   right:     -20px;
   bottom:    20px;
   z-index:   5;
-  &__wheel {
-    animation:        rotate 8s infinite linear;
-    transform-origin: center center;
-  }
 }
 
 @keyframes pointer {

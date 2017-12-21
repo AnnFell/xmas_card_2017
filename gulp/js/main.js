@@ -8,7 +8,7 @@ $(document).ready(function () {
     var viewportWidth = $(window).width();
     var viewportHeight = $(window).height();
 
-    $(window).resize(function() {
+    $(window).resize(function () {
         viewportWidth = $(this).width();
         viewportHeight = $(this).height();
     });
@@ -33,35 +33,49 @@ $(document).ready(function () {
         text2 = $(".text2").val();
         stroke = $(".stroke").val();
 
-            if(text != false){
-                $('.textFill').html(text);
-            }
-            if(text2 != false){
-                $('.textFill2').html(text2);
-            }
-            $('.pathFill').css({strokeWidth: stroke});
+        if (text != false) {
+            $('.textFill').html(text);
+        }
+        if (text2 != false) {
+            $('.textFill2').html(text2);
+        }
+        $('.pathFill').css({strokeWidth: stroke});
     }
 
     //This function sets all things in motion after clicking on launch
     //Click on the Launch button
     $('.launch').on("click", function () {
-        var clicked;
 
-        if(clicked !== true) {
-
-        console.log("klik launch");
         TweenMax.killTweensOf('.snowflake');
 
         launchAnimation();
 
-        setTimeout(makeItSnow, 2700);
+        setTimeout(makeItSnow, 2600);
 
         messageAnimation();
-        }
 
-        return clicked == true;
     });
 
+    //tween bcause of firefox transform-origin bug
+    var pointerTimeline = new TimelineMax();
+    pointerTimeline
+        .fromTo($('.pointer'), 1.5, {rotation: '-40', transformOrigin: 'bottom center'}, {
+            rotation: 30,
+            repeat: -1,
+            yoyo: true,
+            ease: RoughEase.ease
+        });
+    var wheelTimeline = new TimelineMax();
+    wheelTimeline
+        .to($('#wheel1, #wheel2'), 4, {
+            rotation: 360,
+            transformOrigin: 'center center',
+            repeat: -1,
+            ease: Power0.easeNone
+        });
+
+    //gear animation
+    // TweenMax.to($('#wheel1, #wheel2'), 2, {rotation:360, transformOrigin:"left 50%"});
 
     function launchAnimation() {
         var timeline = new TimelineMax();
@@ -86,35 +100,37 @@ $(document).ready(function () {
         );
 
 
-    var numFlakes = 50,
-        posX,
-        size,
-        opacity,
-        duration,
-        delay,
-        rotation;
+    var numFlakes = 50;
 
     function makeItSnow() {
+
+        var posX,
+            size,
+            opacity,
+            duration,
+            delay,
+            rotation;
+
         //for every flake in numFlakes
-        for (var i =0; i < numFlakes; i++) {
+        for (var i = 0; i < numFlakes; i++) {
             //make a copy of the master snowflake
             var singleFlake = snowFlake.clone();
 
             //give a random y position to start
-            posX = Math.floor(Math.random()*viewportWidth);
+            posX = Math.floor(Math.random() * viewportWidth);
 
             //give a random size between 20px and 100px
-            size = getRandomInt(20,100);
+            size = getRandomInt(20, 100);
 
             //give random rotation
-            rotation = getRandomInt(-180,180);
+            rotation = getRandomInt(-180, 180);
 
             //give an opacity
-            if(size < 30){
+            if (size < 30) {
                 opacity = 0.7;
-            }else if(size < 60){
+            } else if (size < 60) {
                 opacity = 0.85;
-            }else{
+            } else {
                 opacity = 1;
             }
 
@@ -132,8 +148,8 @@ $(document).ready(function () {
             pushText();
 
             //calculate the duration of the animation
-            duration = Math.floor(Math.random()*10);
-            delay = Math.random()*10;
+            duration = Math.floor(Math.random() * 10);
+            delay = Math.random() * 10;
             singleFlake.addClass('animation' + i);
 
             //add the animation
@@ -155,8 +171,8 @@ $(document).ready(function () {
         messageTimeline
             .to($('#controls, #page'), 3, {autoAlpha: 0, ease: Power2.EaseIn}, "+=3.5")
             .to($('body'), 3, {backgroundColor: '#333', ease: Power2.EaseOut}, "-=2.75")
-            .to($('.message'), 5, { opacity: 1, autoAlpha: 1, display: 'block', ease: Power1.easeOut}, "+=1.5")
-            .from($('.startAgain'), 0.2, {transform: 'scale(1.1,1.1)', repeat: 1,  ease: Back, yoyo: true});
+            .to($('.message'), 5, {opacity: 1, autoAlpha: 1, display: 'block', ease: Power1.easeOut}, "+=1.5")
+            .from($('.startAgain'), 0.2, {transform: 'scale(1.1,1.1)', repeat: 1, ease: Back, yoyo: true});
         return messageAnimation;
     }
 
