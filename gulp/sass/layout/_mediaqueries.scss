@@ -29,6 +29,9 @@
     margin:        0;
     text-align:    center;
     border-bottom: solid 5px $darkBlue;
+    padding-top:   10px;
+    position:      relative;
+    z-index:       0;
   }
   .controls {
     &__wrap {
@@ -36,12 +39,10 @@
       float: left;
     }
     &__launch {
-      float:          right;
-      text-align:     center;
-      vertical-align: bottom;
-      padding-top:    40px;
-      display:        block;
-      position:       relative;
+      float:       right;
+      text-align:  center;
+      display:     block;
+      height:      100%;
     }
     &input {
       padding:   5px;
@@ -56,6 +57,8 @@
     min-height: 100px;
     display:    block;
     float:      none;
+    position:   relative;
+    z-index:    1;
   }
   .factory {
     padding-top: 10vh;
@@ -69,17 +72,18 @@
     bottom: 100px;
   }
   .launch {
-    height:    100px;
-    width:     100px;
-    font-size: 25px;
-    margin: 0 auto;
+    width:         100%;
+    border-radius: 0;
+    font-size:     25px;
+    margin:        0 auto;
+    min-height:    100px;
   }
   .message {
     margin: 5%;
     width:  90%;
   }
   //Hide decoration
-  .screen, .kabels, .kabelOranje {
+  .screen, .kabels, .kabelOranje, .buttonsSVG {
     display: none;
   }
 }
@@ -101,11 +105,6 @@
   }
   .dash {
     bottom: 100px;
-  }
-  .launch {
-    height:    80px;
-    width:     80px;
-    font-size: 25px;
   }
 }
 

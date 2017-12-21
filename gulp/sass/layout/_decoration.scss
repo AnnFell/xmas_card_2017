@@ -51,11 +51,11 @@ svg {
 }
 
 .connection {
-  width:    500px;
+  width:    100vw;
   height:   24px;
   position: absolute;
-  left:     -450px;
-  bottom:   50px;
+  left:     -99vw;
+  bottom:   40px;
   border:   solid $blue 8px;
 }
 
@@ -96,19 +96,10 @@ svg {
   z-index:   5;
 }
 
-@keyframes pointer {
-  0% {
-    transform: rotate(-60deg)
-  }
-  20% {
-    transform: rotate(10deg)
-  }
-  60% {
-    transform: rotate(-30deg)
-  }
-  100% {
-    transform: rotate(30deg)
-  }
+.buttonsSVG {
+  opacity: 0.2;
+  padding: 30px;
+  margin-bottom: 40px;
 }
 
 @keyframes graph {
@@ -130,14 +121,4 @@ svg {
     transform: scaleX(1.3);
 
   }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-
 }

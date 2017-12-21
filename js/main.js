@@ -72,7 +72,7 @@ $(document).ready(function () {
 
         launchAnimation();
 
-        setTimeout(makeItSnow, 2600);
+        setTimeout(makeItSnow, 2200);
 
         messageAnimation();
 
@@ -102,8 +102,8 @@ $(document).ready(function () {
     function launchAnimation() {
         var timeline = new TimelineMax();
         timeline
-            .to($('.factory'), 0.5, ({marginTop: '10px', repeat: 2, ease: Bounce.easeInOut, yoyo: true}))
-            .to(factoryFlake, 0.8, {top: '100px', ease: Bounce.easeInOut, yoyo: true})
+            .to($('.factory'), 0.3, ({marginTop: '10px', repeat: 2, ease: Bounce.easeInOut, yoyo: true}))
+            .to(factoryFlake, 0.5, {top: '100px', ease: Bounce.easeInOut, yoyo: true})
             .to(factoryFlake, 0.4, {top: '-1000px', ease: Power3.easeOut})
             .to(factoryFlake, 0.1, {autoAlpha: 0});
     }

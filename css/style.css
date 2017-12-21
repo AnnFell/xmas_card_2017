@@ -280,17 +280,18 @@ button {
     float: none;
     margin: 0;
     text-align: center;
-    border-bottom: solid 5px #176572; }
+    border-bottom: solid 5px #176572;
+    padding-top: 10px;
+    position: relative;
+    z-index: 0; }
   .controls__wrap {
     width: 70%;
     float: left; }
   .controls__launch {
     float: right;
     text-align: center;
-    vertical-align: bottom;
-    padding-top: 40px;
     display: block;
-    position: relative; }
+    height: 100%; }
   .controlsinput {
     padding: 5px;
     font-size: 18px; }
@@ -300,7 +301,9 @@ button {
     width: 100%;
     min-height: 100px;
     display: block;
-    float: none; }
+    float: none;
+    position: relative;
+    z-index: 1; }
   .factory {
     padding-top: 10vh;
     height: 600px !important; }
@@ -310,14 +313,15 @@ button {
   .dash {
     bottom: 100px; }
   .launch {
-    height: 100px;
-    width: 100px;
+    width: 100%;
+    border-radius: 0;
     font-size: 25px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    min-height: 100px; }
   .message {
     margin: 5%;
     width: 90%; }
-  .screen, .kabels, .kabelOranje {
+  .screen, .kabels, .kabelOranje, .buttonsSVG {
     display: none; } }
 
 @media (max-width: 575px) {
@@ -331,11 +335,7 @@ button {
     height: 100px;
     padding-top: 10px; }
   .dash {
-    bottom: 100px; }
-  .launch {
-    height: 80px;
-    width: 80px;
-    font-size: 25px; } }
+    bottom: 100px; } }
 
 input::placeholder {
   color: white; }
@@ -381,11 +381,11 @@ svg {
   right: -80px; }
 
 .connection {
-  width: 500px;
+  width: 100vw;
   height: 24px;
   position: absolute;
-  left: -450px;
-  bottom: 50px;
+  left: -99vw;
+  bottom: 40px;
   border: solid #639EA8 8px; }
 
 .screen {
@@ -420,15 +420,10 @@ svg {
   bottom: 20px;
   z-index: 5; }
 
-@keyframes pointer {
-  0% {
-    transform: rotate(-60deg); }
-  20% {
-    transform: rotate(10deg); }
-  60% {
-    transform: rotate(-30deg); }
-  100% {
-    transform: rotate(30deg); } }
+.buttonsSVG {
+  opacity: 0.2;
+  padding: 30px;
+  margin-bottom: 40px; }
 
 @keyframes graph {
   0% {
@@ -443,11 +438,5 @@ svg {
   100% {
     transform: scaleY(1.2);
     transform: scaleX(1.3); } }
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
 
 /*# sourceMappingURL=maps/style.css.map */
