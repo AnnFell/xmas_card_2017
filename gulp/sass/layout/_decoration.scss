@@ -1,0 +1,138 @@
+input::placeholder {
+  color: $glass;
+}
+
+#controls {
+  position: relative;
+  h1 {
+    background-color: $glass;
+    padding:          20px;
+    position:         relative;
+    margin-bottom:    20px;
+    border-right:     lighten($glass, 20%) solid 3px;
+    border-bottom:    lighten($glass, 20%) solid 3px;
+    &:before {
+      content:  "'";
+      position: absolute;
+      top:      5px;
+      left:     5px;
+    }
+    &:after {
+      content:  ".";
+      position: absolute;
+      bottom:   5px;
+      right:    5px;
+    }
+  }
+}
+
+#textWrap {
+  position: relative;
+  z-index:  9000;
+}
+
+.schuinV {
+  width:    50px;
+  height:   100%;
+  position: absolute;
+  right:    -50px;
+}
+
+.meter {
+  position: absolute;
+  width:    100px;
+  top:      30px;
+  right:    -80px;
+  .pointer {
+    animation:        pointer 1.5s infinite alternate ease-in-out;
+    transform-origin: bottom center;
+  }
+}
+
+.connection {
+  width:            500px;
+  height:           10px;
+  position:         absolute;
+  left:             -450px;
+  bottom:           50px;
+  background-color: $blue;
+
+}
+
+.screen {
+  position: absolute;
+  bottom:   10px;
+  left:     10px;
+  width:    70%;
+  z-index:  3000;
+  .graph {
+    animation:        graph 1s infinite alternate;
+    transform-origin: center center;
+  }
+}
+
+.kabels {
+  position: absolute;
+  right:    -130px;
+  width:    150px;
+  top:      45%;
+  z-index:  700;
+}
+
+.gears {
+  position:  absolute;
+  width:     30%;
+  transform: rotate(90deg);
+  right:     -20px;
+  bottom:    10px;
+  &__wheel {
+    animation:        rotate 3s infinite linear;
+    transform-origin: center center;
+  }
+}
+
+@keyframes pointer {
+  0% {
+    transform: rotate(-60deg)
+  }
+  20% {
+    transform: rotate(10deg)
+  }
+  60% {
+    transform: rotate(-30deg)
+  }
+  100% {
+    transform: rotate(30deg)
+  }
+}
+
+@keyframes graph {
+  0% {
+    transform: scaleY(0.5);
+  }
+  35% {
+    transform:    scaleY(1);
+    stroke-width: 8;
+  }
+  45% {
+    transform: rotate(1deg);
+  }
+  55% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(1.2);
+    transform: scaleX(1.3);
+
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+
+}

@@ -1,29 +1,41 @@
-// Large devices (desktops, less than 1200px)
-@media (max-width: 1199px) {
-  .launch.mobile {
-    display: none;
-  }
-}
-
 // Medium devices (tablets, less than 992px)
 @media (max-width: 991px) {
   #controls {
     width:   25%;
+  }
+  #textWrap {
     padding: 20px;
   }
   #page {
     width: 75%;
   }
+  body {
+    font-size: 28px;
+  }
+  .controls input {
+    font-size:20px;
+  }
 }
 
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767px) {
+  body {
+    font-size: 25px;
+  }
   #controls {
     min-width:  100%;
     height:     auto;
     float:      none;
     margin:     0;
     text-align: center;
+    border-bottom: solid 5px $darkBlue;
+  }
+  .controls input {
+    padding: 5px;
+    font-size:18px;
+  }
+  .startAgain {
+    font-size: 20px;
   }
   #page {
     width:      100%;
@@ -54,13 +66,19 @@
     margin: 5%;
     width: 90%;
   }
+  //Hide decoration
+  .screen, .kabels {
+    display: none;
+  }
 }
 
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575px) {
   #controls {
     min-width: 100%;
-    padding:   15px;
+  }
+  #textWrap {
+    padding: 15px;
   }
   #page {
     width: 100%;
