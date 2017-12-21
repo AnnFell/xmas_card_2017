@@ -1,5 +1,5 @@
 input::placeholder {
-  color: $glass;
+  color: white;
 }
 
 #controls {
@@ -50,12 +50,12 @@ input::placeholder {
 }
 
 .connection {
-  width:            500px;
-  height:           10px;
-  position:         absolute;
-  left:             -450px;
-  bottom:           50px;
-  background-color: $blue;
+  width:    500px;
+  height:   24px;
+  position: absolute;
+  left:     -450px;
+  bottom:   50px;
+  border:   solid $blue 8px;
 
 }
 
@@ -68,6 +68,7 @@ input::placeholder {
   .graph {
     animation:        graph 1s infinite alternate;
     transform-origin: center center;
+    opacity: 0.5;
   }
 }
 
@@ -79,14 +80,22 @@ input::placeholder {
   z-index:  700;
 }
 
+.kabelOranje {
+  width:    150px;
+  position: absolute;
+  top:      -100px;
+  right:    -90px;
+}
+
 .gears {
   position:  absolute;
   width:     30%;
   transform: rotate(90deg);
   right:     -20px;
-  bottom:    10px;
+  bottom:    20px;
+  z-index:   5;
   &__wheel {
-    animation:        rotate 3s infinite linear;
+    animation:        rotate 8s infinite linear;
     transform-origin: center center;
   }
 }

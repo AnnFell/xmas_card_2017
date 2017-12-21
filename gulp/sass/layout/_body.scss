@@ -44,6 +44,8 @@ svg {
   z-index:          9999; //debugging
   display:          none;
   opacity:          0;
+  border-right: solid 5px $darkBlue;
+  border-bottom: solid 5px $darkBlue;
   p {
     max-width: 500px;
     margin:    0 auto;

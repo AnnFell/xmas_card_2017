@@ -118,7 +118,9 @@ svg {
   text-align: center;
   z-index: 9999;
   display: none;
-  opacity: 0; }
+  opacity: 0;
+  border-right: solid 5px #176572;
+  border-bottom: solid 5px #176572; }
   .message p {
     max-width: 500px;
     margin: 0 auto; }
@@ -136,6 +138,8 @@ input, button {
     cursor: text;
     border-right: solid 3px #4d828b;
     border-bottom: solid 3px #4d828b; }
+    .controls input[type=text]:hover {
+      background-color: #13525d; }
 
 button {
   background-color: #E0630E;
@@ -320,7 +324,7 @@ button {
     font-size: 25px; } }
 
 input::placeholder {
-  color: #B8CCD1; }
+  color: white; }
 
 #controls {
   position: relative; }
@@ -363,11 +367,11 @@ input::placeholder {
 
 .connection {
   width: 500px;
-  height: 10px;
+  height: 24px;
   position: absolute;
   left: -450px;
   bottom: 50px;
-  background-color: #639EA8; }
+  border: solid #639EA8 8px; }
 
 .screen {
   position: absolute;
@@ -377,7 +381,8 @@ input::placeholder {
   z-index: 3000; }
   .screen .graph {
     animation: graph 1s infinite alternate;
-    transform-origin: center center; }
+    transform-origin: center center;
+    opacity: 0.5; }
 
 .kabels {
   position: absolute;
@@ -386,14 +391,21 @@ input::placeholder {
   top: 45%;
   z-index: 700; }
 
+.kabelOranje {
+  width: 150px;
+  position: absolute;
+  top: -100px;
+  right: -90px; }
+
 .gears {
   position: absolute;
   width: 30%;
   transform: rotate(90deg);
   right: -20px;
-  bottom: 10px; }
+  bottom: 20px;
+  z-index: 5; }
   .gears__wheel {
-    animation: rotate 3s infinite linear;
+    animation: rotate 8s infinite linear;
     transform-origin: center center; }
 
 @keyframes pointer {

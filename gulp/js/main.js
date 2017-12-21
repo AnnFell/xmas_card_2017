@@ -45,6 +45,9 @@ $(document).ready(function () {
     //This function sets all things in motion after clicking on launch
     //Click on the Launch button
     $('.launch').on("click", function () {
+        var clicked;
+
+        if(clicked !== true) {
 
         console.log("klik launch");
         TweenMax.killTweensOf('.snowflake');
@@ -54,6 +57,9 @@ $(document).ready(function () {
         setTimeout(makeItSnow, 2700);
 
         messageAnimation();
+        }
+
+        return clicked == true;
     });
 
 
